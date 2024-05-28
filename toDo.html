@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-2.4</title>
+</head>
+<body>
+    <div class="box">
+        <div class="head">
+            <h1>To Do List</h1>
+        </div>
+        <div class="foot">
+            <div class="inp">
+                <input class="input" id="ip" type="text" placeholder="Enter the To Do Wish">
+                <button class="foo" id="sub" onclick="addinlist()">Add</button>
+            </div>
+            <div>
+                <ul id="ul"></ul>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body{
+            margin-top: 50px;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box{
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            border: solid 2px #000;
+            border-radius: 25px;
+        }
+        .foot{
+            display: flex;
+            flex-direction: column;
+        }
+        .inp{
+            column-gap: 25px;
+        }
+        .foot .input{
+            width: 250px;
+            padding: 14px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .foot .foo{
+            padding: 10px;
+            border-radius: 30px;
+            width: 80px;
+            cursor: pointer;
+            background-color: #009900;
+        }
+        .foot #li{
+            font: 900;
+            font-size: 24px;
+            display: block;
+            font-size: 20px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .delete{
+            text-decoration: line-through;
+        }
+        div{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #del{
+            position: absolute;
+            left: 870px;
+            height: 25px;
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #d41414;
+        }
+        .row{
+            width: 400px;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+    </style>
+
+    <script>
+
+        var s = document.getElementById("ip");
+        s.addEventListener("keypress", function(event){
+        if (event.key === "Enter"){
+        event.preventDefault();
+        document.getElementById("sub").click();
+        }
+        });
+
+        function addinlist(){
+            let s=document.getElementById('ip').value;
+            let mainlist=document.getElementById('ul');
+            let list=document.createElement('li');
+            let but=document.createElement('button');
+
+            list.innerText=s;
+            but.innerText="Delete";
+            
+            let div=document.createElement('div');
+            div.append(list);
+            div.append(but);
+            mainlist.appendChild(div);
+
+            div.setAttribute('class','row');
+            list.setAttribute('id','li');
+            but.setAttribute('class','foo');
+            but.setAttribute('id','del');
+            document.getElementById("ip").value="";
+            
+            list.addEventListener("click", function(){
+                list.classList.toggle("delete");
+            });
+
+            but.onclick=function(){
+                ul.removeChild(div);
+            };
+        }
+    </script>
+
+</body>
+</html>
