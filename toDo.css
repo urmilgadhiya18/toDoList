@@ -1,0 +1,71 @@
+body{
+    margin-top: 50px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #000;
+    border-radius: 25px;
+}
+.foot{
+    display: flex;
+    flex-direction: column;
+}
+.inp{
+    column-gap: 25px;
+}
+.foot .input{
+    width: 250px;
+    padding: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.foot .foo{
+    padding: 10px;
+    border-radius: 30px;
+    width: 80px;
+    cursor: pointer;
+    background-color: #009900;
+}
+.foot #li{
+    font: 900;
+    font-size: 24px;
+    display: block;
+    font-size: 20px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.delete{
+    text-decoration: line-through;
+}
+div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#del{
+    position: absolute;
+    left: 870px;
+    height: 25px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d41414;
+}
+.row{
+    width: 400px;
+    display: flex;
+    justify-content: flex-start;
+}
